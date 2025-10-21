@@ -32,10 +32,21 @@ Become root and change directory (CD) into the /wazuhFiles directory to access t
     cd wazuhFiles
 ```
 Open the indexer_starter.sh file and set INDEXER_IP, SERVER_IP, DASHBOARD_IP to your host IP. 
-
+```
+    INDEXER_IP="<YOUR_IP>"
+    SERVER_IP="<YOUR_IP>"
+    DASHBOARD_IP="<YOUR_IP>"
+```
 Run the installation scripts in the FOLLOWING ORDER: index_starter.sh->server_starter.sh->dashboard_starter.sh 
-``` ./index_starter.sh
+```
+    ./index_starter.sh
     ./server_starter.sh
     ./dashboard_starter.sh
 ```
+### Precautions
+* Ensure all scripts are run in the EXACT ORDER mentioned (index_starter.sh->server_starter.sh->dashboard_starter.sh) and let each script finish before starting the next
+* Ensure the ENTIRE installment is done on ONE terminal/session/tab. 
+* Ensure firewall rules are NOT blocking ports 443, 5601, 55000, 9200, 1514/1515, 514
+* 
+
 

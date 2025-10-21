@@ -48,6 +48,6 @@ Run the installation scripts in the FOLLOWING ORDER: index_starter.sh->server_st
 * Ensure all scripts are run in the EXACT ORDER mentioned (index_starter.sh->server_starter.sh->dashboard_starter.sh) and let each script finish before starting the next
 * Ensure the ENTIRE installment is done on ONE terminal/session/tab. 
 * Ensure firewall rules are NOT blocking ports 443, 5601, 55000, 9200, 1514/1515, 514
-* 
+* Ensure the `wazuh-certificates.tar` file is present with the installer files - this is needed to assign and verify certificated for security
 
 

@@ -24,7 +24,8 @@ Have a project directory where you will pull and run the software. (Ex: "WazuhPr
 
 ### Environment Setup & Initiation
 Always ensure your environment is up to date with the latest software to minimize interruption during Wazuh setup
-``` sudo apt-get update
+```
+    sudo apt-get update
     sudo apt-get upgrade
 ```
 Become root and change directory (CD) into the /wazuhFiles directory to access the installation scripts

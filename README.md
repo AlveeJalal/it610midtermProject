@@ -12,13 +12,21 @@ Wazuh is a Security Information And Event Management(SIEM) System used to monito
 * Browser access with ports 443, 5601, 55000, 9200, 1514/1515, 514 unblocked
 
 
-### Ideal Containerized Attempt
-## Environment Setup
+## Ideal Containerized Attempt
+### Environment Setup
 
 Have a project directory where you will pull and run the software. 
 
-### Running on Host OS
-## Environment Setup
+## Running on Host OS
+### Environment Setup
 Have a project directory where you will pull and run the software. (Ex: "WazuhProject")
-
 ``` git clone git@github.com:AlveeJalal/it610midtermProject.git ```
+
+### Environment Setup & Initiation
+Become root and change directory (CD) into the /wazuhFiles directory to access and run the installation scripts in the FOLLOWING ORDER: index_starter.sh->server_starter.sh->dashboard_starter.sh 
+``` su -
+    cd wazuhFiles
+    ./ index_starter.sh
+    ./ server_starter.sh
+    ./ dashboard_starter.sh
+```

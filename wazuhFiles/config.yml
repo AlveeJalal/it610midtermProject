@@ -1,12 +1,12 @@
 nodes:
   # Wazuh indexer nodes
   indexer:
-    - name: node-indexer
+    - name: node-1
       ip: "172.23.128.164"
     #- name: node-2
-    #  ip: "<indexer-node-ip>"
+    #  ip: "172.23.128.164"
     #- name: node-3
-    #  ip: "<indexer-node-ip>"
+    #  ip: "172.23.128.164"
 
   # Wazuh server nodes
   # If there is more than one Wazuh server
@@ -16,10 +16,10 @@ nodes:
       ip: "172.23.128.164"
     #  node_type: master
     #- name: wazuh-2
-    #  ip: "<wazuh-manager-ip>"
+    #  ip: "172.23.128.164"
     #  node_type: worker
     #- name: wazuh-3
-    #  ip: "<wazuh-manager-ip>"
+    #  ip: "172.23.128.164"
     #  node_type: worker
 
   # Wazuh dashboard nodes

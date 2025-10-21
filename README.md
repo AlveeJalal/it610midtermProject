@@ -7,7 +7,7 @@ This project is meant to install, configure, and run an instance of the Wazuh SI
 Wazuh is a Security Information And Event Management(SIEM) System used to monitor a system's security. Wazuh constantly scans for threats and aggregates findings to a log. Wazuh provides data to display to users and possible mitigation solutions. Wazuh's Agent system can monitor activity and flag any concerns for the user to examine and escalate. This a great and free tool to use, and it is a great software to demonstrate containerization and systems administration on because of its flexible configuration. 
 
 ### Prerequisites
-* OS: Linux(Either Native, Virtualized, or WSL2) Preferred with **ROOT** access, as this was tested on WSL2. Possible on Windows with PowerShell(anything with a terminal)
+* OS: Linux(Either Native, Virtualized, or WSL2) Preferred with **ROOT** access, as this was tested on WSL2 Ubuntu(Debian). Possible on Windows with PowerShell(anything with a terminal)
 * Software: Docker Desktop with a DockerHub account
 * Browser access with ports 443, 5601, 55000, 9200, 1514/1515, 514 unblocked
 
@@ -23,10 +23,19 @@ Have a project directory where you will pull and run the software. (Ex: "WazuhPr
 ``` git clone git@github.com:AlveeJalal/it610midtermProject.git ```
 
 ### Environment Setup & Initiation
-Become root and change directory (CD) into the /wazuhFiles directory to access and run the installation scripts in the FOLLOWING ORDER: index_starter.sh->server_starter.sh->dashboard_starter.sh 
+Always ensure your environment is up to date with the latest software to minimize interruption during Wazuh setup
+``` sudo apt-get update
+    sudo apt-get upgrade
+```
+Become root and change directory (CD) into the /wazuhFiles directory to access the installation scripts
 ``` su -
     cd wazuhFiles
-    ./ index_starter.sh
-    ./ server_starter.sh
-    ./ dashboard_starter.sh
 ```
+Open the indexer_starter.sh file and set INDEXER_IP, SERVER_IP, DASHBOARD_IP to your host IP. 
+
+Run the installation scripts in the FOLLOWING ORDER: index_starter.sh->server_starter.sh->dashboard_starter.sh 
+``` ./index_starter.sh
+    ./server_starter.sh
+    ./dashboard_starter.sh
+```
+

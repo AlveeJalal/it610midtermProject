@@ -15,7 +15,13 @@ Wazuh is a Security Information And Event Management(SIEM) System used to monito
 ## Ideal Containerized Attempt
 ### Environment Setup
 
-Have a project directory where you will pull and run the software. 
+Have a project directory where you will pull and run the software. Pull the image from the DockerHub repository. The container successfully running means the software was successfully pulled and started
+``` docker pull alveejalal/wazuhimage:latest 
+    docker run -d --name <Custom Container Name> -p 5601:5601 -p 55000:55000 -p 1514:1514 -p 9200:9200  wazuhimage
+```
+You can also go into the bash shell:
+```     docker exec -it <Custom Container Name> bash ```
+
 
 ## Running on Host OS
 ### Environment Setup

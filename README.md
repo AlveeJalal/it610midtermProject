@@ -44,6 +44,7 @@ Run the installation scripts in the FOLLOWING ORDER: index_starter.sh->server_st
     ./server_starter.sh
     ./dashboard_starter.sh
 ```
+Access Wazuh on your browser using your set IP(Can be Host, VM, or Localhost IP) and port number(typically 443) for the dashboard  with the URL: ``` https://<Your_IP>:port ```
 ### Precautions
 * Ensure all scripts are run in the EXACT ORDER mentioned (index_starter.sh->server_starter.sh->dashboard_starter.sh) and let each script finish before starting the next
 * Ensure the ENTIRE installment is done on ONE terminal/session/tab. 

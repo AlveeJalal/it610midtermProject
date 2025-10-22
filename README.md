@@ -16,7 +16,8 @@ Wazuh is a Security Information And Event Management(SIEM) System used to monito
 ### Environment Setup
 
 Have a project directory where you will pull and run the software. Pull the image from the DockerHub repository. The container successfully running means the software was successfully pulled and started
-``` docker pull alveejalal/wazuhimage:latest 
+```
+    docker pull alveejalal/wazuhimage:latest 
     docker run -d --name <Custom Container Name> -p 5601:5601 -p 55000:55000 -p 1514:1514 -p 9200:9200  wazuhimage
 ```
 You can also go into the bash shell:
@@ -51,7 +52,8 @@ Run the installation scripts in the FOLLOWING ORDER: index_starter.sh->server_st
     ./dashboard_starter.sh
 ```
 Access Wazuh on your browser using your set IP(Can be Host, VM, or Localhost IP) and port number(typically 443) for the dashboard  with the URL: ``` https://<Your_IP>:port ```
-
+<img width="1918" height="1198" alt="wazuh_dashboard_startup" src="https://github.com/user-attachments/assets/f635b5d7-d535-4a6e-b01c-23ff13c3df3b" />
+Dashboard should look like the above
 ### Keeping Services Persistent
 
 If using WSL2, create a script and have it run on startup. Make sure it is executable

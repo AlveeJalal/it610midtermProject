@@ -45,6 +45,32 @@ Run the installation scripts in the FOLLOWING ORDER: index_starter.sh->server_st
     ./dashboard_starter.sh
 ```
 Access Wazuh on your browser using your set IP(Can be Host, VM, or Localhost IP) and port number(typically 443) for the dashboard  with the URL: ``` https://<Your_IP>:port ```
+
+### Keeping Services Persistent
+
+If using WSL2, create a script and have it run on startup. Make sure it is executable
+```
+sudo vi /etc/wsl.conf
+```
+Add this line ``` command="bash /usr/local/bin/wazuh-startup.sh" ```
+
+Create the script
+``` sudo nano /usr/local/bin/wazuh-startup.sh ```
+The script will run the services on startup
+```
+#!/bin/bash
+# Wait a few seconds for networking to stabilize
+sleep 5
+
+# Start all Wazuh services
+systemctl start wazuh-indexer
+systemctl start wazuh-manager
+systemctl start wazuh-dashboard
+
+```
+
+
+
 ### Precautions
 * Ensure all scripts are run in the EXACT ORDER mentioned (index_starter.sh->server_starter.sh->dashboard_starter.sh) and let each script finish before starting the next
 * Ensure the ENTIRE installment is done on ONE terminal/session/tab. 

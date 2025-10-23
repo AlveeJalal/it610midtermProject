@@ -112,4 +112,7 @@ systemctl start wazuh-dashboard
 * Ensure firewall rules are NOT blocking ports 443, 5601, 55000, 9200, 1514/1515, 514
 * Ensure the `wazuh-certificates.tar` file is present with the installer files - this is needed to assign and verify certificated for security
 
+## Component/features Breakdown
 
+### indexer_starter.sh,  server_starter.sh,  dashboard_starter.sh 
+Scripts to install, setup & run the Wazuh Indexer, manager & dashboard Generates config files, creates and sets a node, & initialized cluster security/certification script. Overwrites existing installations.

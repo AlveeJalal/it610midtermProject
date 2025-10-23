@@ -15,6 +15,13 @@ Wazuh is a Security Information And Event Management(SIEM) System used to monito
 ## Ideal Containerized Attempt
 ### Environment Setup
 
+Secure Credentials - Create a .env file (if not existing) and enter your new credentials that will be created upon running and starting the image container. Use the following format in the .env file:
+```
+WAZUH_USER = username
+WAZUH_PASSWORD = password
+```
+
+
 Have a project directory where you will pull and run the software. Pull the image from the DockerHub repository. The container successfully running means the software was successfully pulled and started
 ```
     docker pull alveejalal/wazuhimage:latest 

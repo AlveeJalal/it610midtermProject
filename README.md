@@ -26,7 +26,7 @@ WAZUH_USER = username
 WAZUH_PASSWORD = password
 ```
 
-
+### Initialization and Execution
 Have a project directory where you will pull and run the software. Become root and pull the image from the DockerHub repository. The container successfully running means the software was successfully pulled and started
 ```
     su -
@@ -36,6 +36,20 @@ Have a project directory where you will pull and run the software. Become root a
 You can also go into the bash shell:
 ```     docker exec -it <Custom Container Name> bash ```
 
+Become root and change directory (CD) into the /wazuhFiles directory to access the installation scripts
+``` su -
+    cd wazuhFiles
+```
+Open the indexer_starter.sh file and set INDEXER_IP, SERVER_IP, DASHBOARD_IP to your host IP. 
+```
+    INDEXER_IP="<YOUR_IP>"
+    SERVER_IP="<YOUR_IP>"
+    DASHBOARD_IP="<YOUR_IP>"
+```
+
+Access Wazuh on your browser using your set IP(Can be Host, VM, or Localhost IP) and port number(typically 443) for the dashboard  with the URL: ``` https://<Your_IP>:port ```
+<img width="1918" height="1198" alt="wazuh_dashboard_startup" src="https://github.com/user-attachments/assets/f635b5d7-d535-4a6e-b01c-23ff13c3df3b" />
+Dashboard should look like the above
 
 ## Running on Host OS
 ### Environment Setup

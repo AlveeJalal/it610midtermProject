@@ -1,9 +1,6 @@
 #!/bin/bash
 #start indexer 
 
-/lib/systemd/systemd &
-SYSTEMD_PID=$!
-sleep 3
 
 cd /WazuhApp/testWazuh
 
@@ -11,10 +8,12 @@ if [ ! -f  /usr/share/wazuh-indexer/bin/wazuh-indexer ]; then
 	echo "Installing Wazuh Indexer..."
 	bash wazuh-install.sh --generate-config-files
 	bash wazuh-install.sh --wazuh-indexer node-1
+        bash  wazuh-install.sh --start-cluster
+	   
 # Show the actual error log
-        echo "=== INSTALLATION ERROR LOG ==="
-        cat /var/log/wazuh-install.log
-        echo "=== END ERROR LOG ==="
+        #echo "=== INSTALLATION ERROR LOG ==="
+        #cat /var/log/wazuh-install.log
+        #echo "=== END ERROR LOG ==="
 
 fi
 
@@ -35,7 +34,7 @@ echo "Starting Services"
 
 if [ -x /usr/share/wazuh-indexer/bin/wazuh-indexer ]; then
 	echo "Starting Wazuh Indexer..."
-	/usr/share/wazuh-indexer/bin/wazuh-indexer & 
+	/usr/share/wazuh-indexer/bin/opensearch & 
 	sleep 10
 else
     echo "ERROR: Wazuh Indexer binary not found"

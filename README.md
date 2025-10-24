@@ -116,3 +116,14 @@ systemctl start wazuh-dashboard
 
 ### indexer_starter.sh,  server_starter.sh,  dashboard_starter.sh 
 Scripts to install, setup & run the Wazuh Indexer, manager & dashboard Generates config files, creates and sets a node, & initialized cluster security/certification script. Overwrites existing installations.
+
+### config.yml
+This file gets created after running the Wazuh Installer from the installation scripts. This file configures the node IP addresses for all the devices running each service (Indexer, Manager, Dashboard, etc). 
+
+### wazuh-certificates.tar
+This .tar directory contains necessary certificates and secrets used to securely verify the authenticity and provide trust between all components in this project. Make sure this is in the main project directory or anywhere services are run so the system can authenticate properly. 
+
+### entrypoint.sh
+Install and start services manually by the binary files after checking for their existence  rather than systemd (for cases where systemd isn't working or isn't available). Wazuh by default runs using systemctl which relies on systemd in Linux. 
+
+

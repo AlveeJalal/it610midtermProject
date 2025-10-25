@@ -4,6 +4,7 @@
 
 cd /WazuhApp/testWazuh
 
+# Install indexer
 if [ ! -f  /usr/share/wazuh-indexer/bin/wazuh-indexer ]; then
 	echo "Installing Wazuh Indexer..."
 	bash wazuh-install.sh --generate-config-files
@@ -17,14 +18,14 @@ if [ ! -f  /usr/share/wazuh-indexer/bin/wazuh-indexer ]; then
 
 fi
 
-#start manager 
+# install manager 
 if [ ! -f /var/ossec/bin/wazuh-control ]; then
 	echo "Installing Wazuh Server/manager..."
        bash wazuh-install.sh -o --wazuh-server wazuh-1
 fi
 
 
-#start dashboard
+#install dashboard
 if [ ! -f /usr/share/wazuh-dashboard/bin/wazuh-dashboard ]; then
 	echo "Installing Wazuh Dashboard..."
 	bash wazuh-install.sh -o --wazuh-dashboard dashboard
@@ -32,6 +33,7 @@ fi
 
 echo "Starting Services"
 
+#start indexer
 if [ -x /usr/share/wazuh-indexer/bin/wazuh-indexer ]; then
 	echo "Starting Wazuh Indexer..."
 	/usr/share/wazuh-indexer/bin/opensearch & 
@@ -40,6 +42,7 @@ else
     echo "ERROR: Wazuh Indexer binary not found"
 fi
 
+#start manager
 if [ -x /var/ossec/bin/wazuh-control ]; then
 	echo "Starting Wazuh Server..."
 	/var/ossec/bin/wazuh-control start
@@ -48,6 +51,7 @@ else
     echo "ERROR: Wazuh Manager binary not found"
 fi
 
+#start Dashboard
 if [ -x /usr/share/wazuh-dashboard/bin/wazuh-dashboard ]; then
 	echo "Starting Wazuh Dashboard..."
 	exec /usr/share/wazuh-dashboard/bin/wazuh-dashboard

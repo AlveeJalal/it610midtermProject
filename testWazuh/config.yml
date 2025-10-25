@@ -26,3 +26,5 @@ nodes:
   dashboard:
     - name: dashboard
       ip: "172.23.128.164"
+
+#Please change these IP's to your own or localhost

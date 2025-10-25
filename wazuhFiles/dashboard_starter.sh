@@ -1,7 +1,10 @@
 #!/bin/bash
 bash wazuh-install.sh --wazuh-dashboard dashboard -o
-# Create config file if missing
+# Create config directory if missing
+#Generative AI assisted with this file. 
 sudo mkdir -p /etc/wazuh-dashboard
+
+#create config file
 sudo bash -c 'cat > /etc/wazuh-dashboard/opensearch_dashboards.yml << EOF
 server.host: 0.0.0.0
 server.port: 443
@@ -13,9 +16,12 @@ csp.strict: false
 csp.warnLegacyBrowsers: false
 logging.verbose: true
 EOF'
+
+#set permissions for dashboard config files & start the service
 sudo chown wazuh-dashboard:wazuh-dashboard /etc/wazuh-dashboard/opensearch_dashboards.yml
 sudo systemctl start wazuh-dashboard
 
+#service config file
 sudo bash -c 'cat > /etc/systemd/system/wazuh-dashboard.service << EOF
 [Unit]
 Description=Wazuh dashboard
@@ -33,7 +39,7 @@ RestartSec=5s
 [Install]
 WantedBy=multi-user.target
 EOF'
-
+#restart and enable dashboard service
 sudo systemctl daemon-reload
 sudo systemctl enable wazuh-dashboard
 sudo systemctl start wazuh-dashboard

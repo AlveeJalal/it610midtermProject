@@ -2,6 +2,9 @@
 bash wazuh-install.sh --wazuh-dashboard dashboard -o
 # Create config directory if missing
 #Generative AI assisted with this file. 
+
+# OpenAI. (2025). ChatGPT (GPT-5 ) [Large language model]. Code generated for  assistance in creating configurations for Wazuh-Dashboard . https://chat.openai.com/chat
+
 sudo mkdir -p /etc/wazuh-dashboard
 
 #create config file

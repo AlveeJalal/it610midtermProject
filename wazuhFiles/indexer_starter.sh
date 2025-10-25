@@ -15,7 +15,7 @@ DASHBOARD_IP="172.23.128.164"
 sudo sed -i "s|<indexer-node-ip>|${INDEXER_IP}|g" config.yml
 sudo sed -i "s|<wazuh-manager-ip>|${SERVER_IP}|g" config.yml
 sudo sed -i "s|<dashboard-node-ip>|${DASHBOARD_IP}|g" config.yml
-
+# OpenAI. (2025). ChatGPT (GPT-5 ) [Large language model]. Code generated for passing IP addresses to .yaml files for installation assistance. https://chat.openai.com/chat
 #if the install files exist, then commence installation
 if [ ! -f wazih-install.sh ]; then
 	sudo bash  wazuh-install.sh  --generate-config-files
